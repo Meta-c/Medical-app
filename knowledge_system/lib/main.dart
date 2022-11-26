@@ -3,10 +3,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:knowledge_system/core/dependecies.dart';
 import 'features/splash/splash_view.dart';
 
 void main() {
-  // setupDependecies();
+  setupDependecies();
   runApp(DevicePreview(
       enabled: !kReleaseMode, builder: (context) => const diseasIdentify()));
 }
