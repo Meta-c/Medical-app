@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:knowledge_system/core/utils/size_config.dart';
 import 'package:knowledge_system/core/widgets/space_widget.dart';
 import 'package:knowledge_system/features/knowledge base/symptoms_list.dart';
 
-class PageViewItem extends StatelessWidget {
-  const PageViewItem({super.key, this.symptomNum, this.onchange});
+class PageViewItem extends GetView {
+  PageViewItem({
+    super.key,
+    this.symptomNum,
+    this.onchange,
+  });
 
-  final String? symptomNum;
-  final void Function(dynamic)? onchange;
+  String? symptomNum;
+  void Function(dynamic)? onchange;
+  // DropdownMenuItem<String?> dropdownValue = symptoms.first.value;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -27,7 +34,11 @@ class PageViewItem extends StatelessWidget {
         const VerticalSpace(
           value: 3,
         ),
-        DropdownButton(items: symptoms, onChanged: onchange)
+        DropdownButton(
+          items: symptoms,
+          onChanged: onchange,
+          // value: dropdownValue,
+        )
       ],
     );
   }

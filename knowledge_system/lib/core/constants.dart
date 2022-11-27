@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 List<String> kIschaemicHeart = [
   'Neck or jaw pain',
   'A fast heartbeat',
@@ -60,3 +62,28 @@ List<String> kDiabetes = [
   'Lose weight without trying',
   'Have blurry vision'
 ];
+
+final Map<String, List<String>> knowledgeBase = {
+  'Ischaemic heart disease': kIschaemicHeart,
+  'Stroke': kStroke,
+  'Cancer': kCancer,
+  'Cirrhosis': kCirrhosis,
+  'Lower Respiratory Infections': kLowerRespiratoryInfections,
+  'Chronic Obstructive Pulmonary': kChronicObstructivePulmonary,
+  'Chronic Kidney': kChronicKidney,
+  'Hepatitis': kHepatitis,
+  'Diabetes': kDiabetes
+};
+
+List<String> patientSymp = [];
+
+String res = 'No';
+
+String result() {
+  knowledgeBase.forEach((key, value) {
+    if (listEquals<String>(value, patientSymp)) {
+      res = key;
+    }
+  });
+  return res;
+}

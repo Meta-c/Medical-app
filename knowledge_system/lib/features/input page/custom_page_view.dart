@@ -5,9 +5,10 @@ import 'package:knowledge_system/features/input%20page/page_view_item.dart';
 import 'package:knowledge_system/features/input%20page/submit_view_item.dart';
 
 class CustomPageView extends GetView<InputPageController> {
-  const CustomPageView({super.key, this.pageController});
+  CustomPageView({super.key, this.pageController});
 
   final PageController? pageController;
+  String? choose = Get.find<InputPageController>().data.firstSymptom;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +19,9 @@ class CustomPageView extends GetView<InputPageController> {
               onPageChanged: (value) => controller.setIndex(value),
               children: [
                 PageViewItem(
-                    symptomNum: 'First',
-                    onchange: (value) => controller.onPageChanged(value, 0)),
+                  symptomNum: 'First',
+                  onchange: (value) => controller.onPageChanged(value, 0),
+                ),
                 PageViewItem(
                   symptomNum: 'Second',
                   onchange: (value) => controller.onPageChanged(value, 1),
