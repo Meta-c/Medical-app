@@ -4,10 +4,11 @@ import 'package:knowledge_system/features/input%20page/input_page_controller.dar
 import 'package:knowledge_system/features/input%20page/page_view_item.dart';
 import 'package:knowledge_system/features/input%20page/submit_view_item.dart';
 
-class CustomPageView extends StatelessWidget {
+class CustomPageView extends GetView<InputPageController> {
   const CustomPageView({super.key, this.pageController});
 
   final PageController? pageController;
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<InputPageController>(
@@ -15,20 +16,23 @@ class CustomPageView extends StatelessWidget {
         builder: (controller) => PageView(
               controller: pageController,
               onPageChanged: (value) => controller.setIndex(value),
-              children: const [
+              children: [
                 PageViewItem(
-                  symptomNum: 'First',
-                ),
+                    symptomNum: 'First',
+                    onchange: (value) => controller.onPageChanged(value, 0)),
                 PageViewItem(
                   symptomNum: 'Second',
+                  onchange: (value) => controller.onPageChanged(value, 1),
                 ),
                 PageViewItem(
                   symptomNum: 'Third',
+                  onchange: (value) => controller.onPageChanged(value, 2),
                 ),
                 PageViewItem(
                   symptomNum: 'Fourth',
+                  onchange: (value) => controller.onPageChanged(value, 3),
                 ),
-                SubmitViewItem()
+                const SubmitViewItem()
               ],
             ));
   }

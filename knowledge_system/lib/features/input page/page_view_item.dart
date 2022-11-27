@@ -4,9 +4,10 @@ import 'package:knowledge_system/core/widgets/space_widget.dart';
 import 'package:knowledge_system/features/knowledge base/symptoms_list.dart';
 
 class PageViewItem extends StatelessWidget {
-  const PageViewItem({super.key, this.symptomNum});
+  const PageViewItem({super.key, this.symptomNum, this.onchange});
 
   final String? symptomNum;
+  final void Function(dynamic)? onchange;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,14 +20,14 @@ class PageViewItem extends StatelessWidget {
           style: TextStyle(
             fontSize: SizeConfig.defaultSize! * 4,
             fontWeight: FontWeight.bold,
-            color: Colors.blueGrey,
+            color: Colors.white,
             fontFamily: 'Poppins',
           ),
         ),
         const VerticalSpace(
           value: 3,
         ),
-        DropdownButton(items: symptoms, onChanged: (value) {})
+        DropdownButton(items: symptoms, onChanged: onchange)
       ],
     );
   }
