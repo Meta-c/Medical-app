@@ -8,8 +8,8 @@ class ResultPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color.fromARGB(30, 119, 117, 139),
+    return const Scaffold(
+      backgroundColor: Colors.black87,
       body: ResultPageBody(),
     );
   }

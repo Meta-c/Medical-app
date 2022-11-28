@@ -16,8 +16,8 @@ class ResultPageBody extends GetView {
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Positioned(
-            left: 0,
-            right: 0,
+            left: SizeConfig.defaultSize! * 2,
+            right: SizeConfig.defaultSize! * 2,
             top: SizeConfig.defaultSize! * 15,
             child: Container(
               width: SizeConfig.defaultSize! * 3,
@@ -59,25 +59,19 @@ class ResultPageBody extends GetView {
             ),
           ),
           Positioned(
-              left: 0,
-              bottom: SizeConfig.defaultSize! * 20,
-              right: 0,
-              child: Image.asset(
-                'assets/images/survey.png',
-                width: SizeConfig.defaultSize! * 1,
-                height: SizeConfig.defaultSize! * 30,
-              )),
-          Positioned(
               bottom: SizeConfig.defaultSize! * 5,
-              left: 0,
-              right: 0,
+              left: SizeConfig.defaultSize! * 4,
+              right: SizeConfig.defaultSize! * 4,
               child: CustomGeneralButton(
                 text: 'Home',
                 onTap: () {
+                  res = 'Unidentified';
+                  emptySympList();
                   Future.delayed(const Duration(seconds: 3), () {
                     // ignore: prefer_const_constructors
                     Get.to(() => InputView(), transition: Transition.fade);
                   });
+                  print(patientSymp);
                 },
               ))
         ]);

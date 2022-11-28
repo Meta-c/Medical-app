@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:knowledge_system/features/input%20page/input_page_controller.dart';
 
 List<String> kIschaemicHeart = [
   'Neck or jaw pain',
@@ -84,6 +85,12 @@ String result() {
     if (listEquals<String>(value, patientSymp)) {
       res = key;
     }
+    InputPageController().updateUI();
   });
+
   return res;
+}
+
+void emptySympList() {
+  patientSymp.clear();
 }

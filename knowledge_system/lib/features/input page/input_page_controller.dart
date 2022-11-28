@@ -28,4 +28,8 @@ class InputPageController extends GetxController {
 
     update();
   }
+
+  void updateUI() {
+    update();
+  }
 }

@@ -41,7 +41,7 @@ class _InputPageBodyState extends State<InputPageBody> {
             child: Image.asset('assets/images/medical-icon-png-6576.png')),
         Positioned(
             bottom: pageController!.hasClients && pageController?.page == 4
-                ? SizeConfig.defaultSize! * 30
+                ? SizeConfig.defaultSize! * 20
                 : SizeConfig.defaultSize! * 5,
             left: SizeConfig.defaultSize! * 10,
             right: SizeConfig.defaultSize! * 10,
@@ -68,7 +68,8 @@ class _InputPageBodyState extends State<InputPageBody> {
                           // ignore: prefer_const_constructors
                           Get.to(() => ResultPageView(),
                               transition: Transition.fade);
-                        })
+                        }),
+                        print(patientSymp)
                       }
                     : pageController?.nextPage(
                         duration: const Duration(milliseconds: 400),
