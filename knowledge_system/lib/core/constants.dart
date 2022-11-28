@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:knowledge_system/features/input%20page/input_page_controller.dart';
 
@@ -82,7 +83,7 @@ String res = 'No';
 
 String result() {
   knowledgeBase.forEach((key, value) {
-    if (listEquals<String>(value, patientSymp)) {
+    if (const DeepCollectionEquality.unordered().equals(value, patientSymp)) {
       res = key;
     }
     InputPageController().updateUI();

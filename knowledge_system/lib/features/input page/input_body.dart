@@ -4,8 +4,9 @@ import 'package:knowledge_system/core/utils/size_config.dart';
 import 'package:knowledge_system/core/widgets/custom_button.dart';
 import 'package:knowledge_system/features/input%20page/custom_page_view.dart';
 import 'package:knowledge_system/features/input%20page/input_page_controller.dart';
-import 'package:knowledge_system/features/results_page/result_page_view.dart';
 import 'package:knowledge_system/core/constants.dart';
+import 'package:knowledge_system/features/loading_screen/loading_screen.dart';
+import 'package:knowledge_system/features/results_page/result_page_view.dart';
 
 class InputPageBody extends StatefulWidget {
   const InputPageBody({super.key});
@@ -49,7 +50,7 @@ class _InputPageBodyState extends State<InputPageBody> {
               text: pageController!.hasClients && pageController?.page == 4
                   ? 'Submit'
                   : 'Next',
-              onTap: () {
+              onTap: () async {
                 String? firstsymb =
                     Get.find<InputPageController>().data.firstSymptom;
                 String? secondsymb =
@@ -64,12 +65,9 @@ class _InputPageBodyState extends State<InputPageBody> {
                         patientSymp.add(secondsymb!),
                         patientSymp.add(thirdsymb!),
                         patientSymp.add(fourthsymb!),
-                        Future.delayed(const Duration(seconds: 3), () {
-                          // ignore: prefer_const_constructors
-                          Get.to(() => ResultPageView(),
-                              transition: Transition.fade);
-                        }),
-                        print(patientSymp)
+                        Get.to(LoadingScreen(
+                          nextPage: const ResultPageView(),
+                        ))
                       }
                     : pageController?.nextPage(
                         duration: const Duration(milliseconds: 400),
@@ -80,3 +78,11 @@ class _InputPageBodyState extends State<InputPageBody> {
     );
   }
 }
+
+
+
+// Future.delayed(const Duration(seconds: 1), () {
+//                           // ignore: prefer_const_constructors
+//                           Get.to(() => ResultPageView(),
+//                               transition: Transition.fade);
+//                         })

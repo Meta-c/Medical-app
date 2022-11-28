@@ -5,6 +5,7 @@ import 'package:knowledge_system/core/constants.dart';
 import 'package:knowledge_system/core/widgets/custom_button.dart';
 import 'package:knowledge_system/core/widgets/space_widget.dart';
 import 'package:knowledge_system/features/input%20page/input_view.dart';
+import 'package:knowledge_system/features/loading_screen/loading_screen.dart';
 
 class ResultPageBody extends GetView {
   const ResultPageBody({super.key});
@@ -67,11 +68,7 @@ class ResultPageBody extends GetView {
                 onTap: () {
                   res = 'Unidentified';
                   emptySympList();
-                  Future.delayed(const Duration(seconds: 3), () {
-                    // ignore: prefer_const_constructors
-                    Get.to(() => InputView(), transition: Transition.fade);
-                  });
-                  print(patientSymp);
+                  Get.to(LoadingScreen(nextPage: const InputView()));
                 },
               ))
         ]);
