@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:knowledge_system/core/utils/size_config.dart';
 import 'package:knowledge_system/core/widgets/space_widget.dart';
@@ -57,9 +57,9 @@ class _SplashBodyState extends State<SplashBody>
               child: Text(
                 'Diseas Detection',
                 style: TextStyle(
-                  fontSize: SizeConfig.defaultSize! * 4,
+                  fontSize: SizeConfig.defaultSize! * 3,
                   fontWeight: FontWeight.bold,
-                  color: const Color(0xffffffff),
+                  color: Colors.black,
                   fontFamily: 'Poppins',
                 ),
               ),

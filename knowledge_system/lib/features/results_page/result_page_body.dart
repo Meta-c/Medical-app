@@ -25,7 +25,7 @@ class ResultPageBody extends GetView {
               height: SizeConfig.defaultSize! * 22,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Colors.blueGrey),
+                  color: Colors.lightBlueAccent),
               child: Column(
                 children: [
                   const VerticalSpace(
@@ -50,7 +50,7 @@ class ResultPageBody extends GetView {
                     style: TextStyle(
                       fontSize: SizeConfig.defaultSize! * 4,
                       fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(255, 22, 11, 11),
+                      color: const Color.fromARGB(255, 19, 18, 18),
                       fontFamily: 'Poppins',
                     ),
                   ),

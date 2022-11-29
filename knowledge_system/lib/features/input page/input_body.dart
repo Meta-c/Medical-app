@@ -38,8 +38,12 @@ class _InputPageBodyState extends State<InputPageBody> {
         Positioned(
             left: 0,
             right: 0,
-            top: SizeConfig.defaultSize! * 0.01,
-            child: Image.asset('assets/images/medical-icon-png-6576.png')),
+            top: SizeConfig.defaultSize! * 7,
+            child: Image.asset(
+              'assets/images/medical-icon-png-6576.png',
+              width: SizeConfig.defaultSize! * 2,
+              height: SizeConfig.defaultSize! * 15,
+            )),
         Positioned(
             bottom: pageController!.hasClients && pageController?.page == 4
                 ? SizeConfig.defaultSize! * 20

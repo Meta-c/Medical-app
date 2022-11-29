@@ -60,7 +60,7 @@ class _LoadingScreenState extends State<LoadingScreen>
           child: SpinKitDoubleBounce(
         controller: animationController,
         duration: const Duration(seconds: 2),
-        color: Colors.blueGrey,
+        color: Colors.lightBlueAccent,
         size: 100,
       )),
     );

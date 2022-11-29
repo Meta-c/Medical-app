@@ -1,5 +1,5 @@
 import 'package:collection/collection.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:knowledge_system/features/input%20page/input_page_controller.dart';
 
 List<String> kIschaemicHeart = [
@@ -95,3 +95,5 @@ String result() {
 void emptySympList() {
   patientSymp.clear();
 }
+
+var kappColor = Colors.white;

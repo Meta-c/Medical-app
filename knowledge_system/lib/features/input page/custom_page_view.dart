@@ -10,6 +10,11 @@ class CustomPageView extends GetView<InputPageController> {
   final PageController? pageController;
   String? choose = Get.find<InputPageController>().data.firstSymptom;
 
+  dynamic firstValue;
+  dynamic secondValue;
+  dynamic thirdValue;
+  dynamic fourthValue;
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<InputPageController>(
@@ -20,19 +25,39 @@ class CustomPageView extends GetView<InputPageController> {
               children: [
                 PageViewItem(
                   symptomNum: 'First',
-                  onchange: (value) => controller.onPageChanged(value, 0),
+                  onchange: (value) {
+                    controller.onPageChanged(value, 0);
+                    firstValue = value;
+                    controller.updateUI();
+                  },
+                  dropdownValue: firstValue,
                 ),
                 PageViewItem(
                   symptomNum: 'Second',
-                  onchange: (value) => controller.onPageChanged(value, 1),
+                  onchange: (value) {
+                    controller.onPageChanged(value, 1);
+                    secondValue = value;
+                    controller.updateUI();
+                  },
+                  dropdownValue: secondValue,
                 ),
                 PageViewItem(
                   symptomNum: 'Third',
-                  onchange: (value) => controller.onPageChanged(value, 2),
+                  onchange: (value) {
+                    controller.onPageChanged(value, 2);
+                    thirdValue = value;
+                    controller.updateUI();
+                  },
+                  dropdownValue: thirdValue,
                 ),
                 PageViewItem(
                   symptomNum: 'Fourth',
-                  onchange: (value) => controller.onPageChanged(value, 3),
+                  onchange: (value) {
+                    controller.onPageChanged(value, 3);
+                    fourthValue = value;
+                    controller.updateUI();
+                  },
+                  dropdownValue: fourthValue,
                 ),
                 const SubmitViewItem()
               ],
