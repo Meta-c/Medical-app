@@ -37,7 +37,7 @@ class PageViewItem extends GetView {
           // elevation: 2,
           // borderRadius: BorderRadius.circular(20),
           buttonHeight: SizeConfig.defaultSize! * 5,
-          buttonWidth: SizeConfig.defaultSize! * 30,
+          buttonWidth: SizeConfig.defaultSize! * 35,
           // buttonPadding: const EdgeInsets.only(left: 10, right: 0),
           buttonDecoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
