@@ -59,7 +59,7 @@ class _SplashBodyState extends State<SplashBody>
                 style: TextStyle(
                   fontSize: SizeConfig.defaultSize! * 3,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: Colors.blueAccent,
                   fontFamily: 'Poppins',
                 ),
               ),

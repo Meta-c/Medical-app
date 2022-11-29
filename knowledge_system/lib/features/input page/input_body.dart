@@ -51,6 +51,7 @@ class _InputPageBodyState extends State<InputPageBody> {
             left: SizeConfig.defaultSize! * 10,
             right: SizeConfig.defaultSize! * 10,
             child: CustomGeneralButton(
+              elevation: 7,
               text: pageController!.hasClients && pageController?.page == 4
                   ? 'Submit'
                   : 'Next',

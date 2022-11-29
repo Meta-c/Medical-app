@@ -79,7 +79,7 @@ final Map<String, List<String>> knowledgeBase = {
 
 List<String> patientSymp = [];
 
-String res = 'No';
+String res = 'Undifined';
 
 String result() {
   knowledgeBase.forEach((key, value) {
