@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:knowledge_system/core/utils/size_config.dart';
 import 'package:knowledge_system/core/widgets/space_widget.dart';
-import 'package:knowledge_system/features/input%20page/input_view.dart';
+
+import '../../services/database.dart';
+import '../knowledge base/symptoms_list.dart';
+import '../main_page/main_page_view.dart';
 
 class SplashBody extends StatefulWidget {
   const SplashBody({super.key});
@@ -23,6 +26,7 @@ class _SplashBodyState extends State<SplashBody>
     super.initState();
     animationController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 600));
+    Get.find<JsonDecode>().decoded();
 
     fadingAnimation =
         Tween<double>(begin: .2, end: 1).animate(animationController!);
@@ -73,7 +77,7 @@ class _SplashBodyState extends State<SplashBody>
   void goToNextView() {
     Future.delayed(const Duration(seconds: 3), () {
       // ignore: prefer_const_constructors
-      Get.to(() => InputView(), transition: Transition.fade);
+      Get.to(() => MainPageView(), transition: Transition.fade);
     });
   }
 }

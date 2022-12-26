@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1026354690547",
+    "project_id": "knowledge-base-c1dc3",
+    "storage_bucket": "knowledge-base-c1dc3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026354690547:android:cf7ac7f35d22f3c8737a86",
+        "android_client_info": {
+          "package_name": "com.example.knowledge_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026354690547-pitpq91jp2f2oa8c3vacv9hthc40e29m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSogVlqokRp4PETXYyRBy-BmBBK9I1Mpw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026354690547-pitpq91jp2f2oa8c3vacv9hthc40e29m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

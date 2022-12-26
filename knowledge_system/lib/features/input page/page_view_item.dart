@@ -58,7 +58,7 @@ class PageViewItem extends GetView {
           iconDisabledColor: Colors.grey,
           dropdownElevation: 2,
 
-          items: symptoms,
+          items: Get.find<DropDownMenuItemsModify>().getSympt(),
           onChanged: onchange,
           value: dropdownValue,
           hint: const Padding(

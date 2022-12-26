@@ -24,8 +24,6 @@ class InputPageController extends GetxController {
       _data = _data.copyWith(fourthSymptom: symp);
     }
 
-    print('data is ${_data.firstSymptom}');
-
     update();
   }
 

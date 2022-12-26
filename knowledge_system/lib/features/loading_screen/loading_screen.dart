@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
+// ignore: unused_import
+import 'package:knowledge_system/services/database.dart';
 
 class LoadingScreen extends StatefulWidget {
   LoadingScreen({Key? key, required this.nextPage}) : super(key: key);
@@ -47,8 +49,9 @@ class _LoadingScreenState extends State<LoadingScreen>
   // }
 
   void goToResultPage(Widget page) {
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () async {
       // ignore: prefer_const_constructors
+
       Get.to(() => page, transition: Transition.fade);
     });
   }

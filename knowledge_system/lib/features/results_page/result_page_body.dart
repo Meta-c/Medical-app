@@ -4,11 +4,14 @@ import 'package:knowledge_system/core/utils/size_config.dart';
 import 'package:knowledge_system/core/constants.dart';
 import 'package:knowledge_system/core/widgets/custom_button.dart';
 import 'package:knowledge_system/core/widgets/space_widget.dart';
-import 'package:knowledge_system/features/input%20page/input_view.dart';
 import 'package:knowledge_system/features/loading_screen/loading_screen.dart';
+import 'package:knowledge_system/features/main_page/main_page_view.dart';
+import 'package:knowledge_system/services/database.dart';
 
 class ResultPageBody extends GetView {
-  const ResultPageBody({super.key});
+  ResultPageBody({super.key});
+
+  final storedData = Get.find<JsonDecode>().mappedData;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +51,7 @@ class ResultPageBody extends GetView {
                       value: 4,
                     ),
                     Text(
-                      result(),
+                      result(storedData),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: SizeConfig.defaultSize! * 4,
@@ -73,7 +76,7 @@ class ResultPageBody extends GetView {
                 onTap: () {
                   res = 'Unidentified';
                   emptySympList();
-                  Get.to(LoadingScreen(nextPage: const InputView()));
+                  Get.to(LoadingScreen(nextPage: const MainPageView()));
                 },
               ))
         ]);

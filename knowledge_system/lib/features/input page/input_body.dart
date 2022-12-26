@@ -5,8 +5,11 @@ import 'package:knowledge_system/core/widgets/custom_button.dart';
 import 'package:knowledge_system/features/input%20page/custom_page_view.dart';
 import 'package:knowledge_system/features/input%20page/input_page_controller.dart';
 import 'package:knowledge_system/core/constants.dart';
+import 'package:knowledge_system/features/knowledge%20base/symptoms_list.dart';
 import 'package:knowledge_system/features/loading_screen/loading_screen.dart';
 import 'package:knowledge_system/features/results_page/result_page_view.dart';
+
+import '../../services/database.dart';
 
 class InputPageBody extends StatefulWidget {
   const InputPageBody({super.key});
@@ -18,13 +21,27 @@ class InputPageBody extends StatefulWidget {
 class _InputPageBodyState extends State<InputPageBody> {
   PageController? pageController;
 
+  // Map<String, dynamic> data = {};
+
+  // void setData() async {
+  //   data = await Get.find<JsonDecode>().decoded();
+  //   setState(() {});
+  // }
+
   @override
   void initState() {
     // TODO: implement initState
+    // SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+    //   setData();
+    // });
     pageController = PageController(initialPage: 0)
       ..addListener(() {
         setState(() {});
       });
+    final Map<String, List<String>> data = Get.find<JsonDecode>().mappedData;
+    print(data);
+    Get.find<DropDownMenuItemsModify>().dropDownMenuItemFun(data);
+
     super.initState();
   }
 
@@ -70,12 +87,13 @@ class _InputPageBodyState extends State<InputPageBody> {
                         patientSymp.add(secondsymb!),
                         patientSymp.add(thirdsymb!),
                         patientSymp.add(fourthsymb!),
+                        print(Get.find<JsonDecode>().mappedData.values),
                         Get.to(LoadingScreen(
                           nextPage: const ResultPageView(),
                         ))
                       }
                     : pageController?.nextPage(
-                        duration: const Duration(milliseconds: 400),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInOut);
               },
             ))

@@ -1,6 +1,9 @@
 import 'package:collection/collection.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:knowledge_system/features/input%20page/input_page_controller.dart';
+
+const kpath = 'assets/data/diseases.json';
 
 List<String> kIschaemicHeart = [
   'Neck or jaw pain',
@@ -81,8 +84,8 @@ List<String> patientSymp = [];
 
 String res = 'Undifined';
 
-String result() {
-  knowledgeBase.forEach((key, value) {
+String result(Map<String, List<String>> data) {
+  data.forEach((key, value) {
     if (const DeepCollectionEquality.unordered().equals(value, patientSymp)) {
       res = key;
     }

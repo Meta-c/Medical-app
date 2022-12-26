@@ -1,0 +1,15 @@
+{
+  "Ischaemic heart disease": [
+    "Neck or jaw pain",
+    "A fast heartbeat",
+    "Nausea and vomiting",
+    "Sweating"
+  ],
+  "Stroke": ["Numbness", "trouble speaking", "Trouble seeing", "dizziness"],
+  "Cancer": [
+    "Bleeding or bruising",
+    "A sore that does not heal",
+    "Thickening or lump in the breast or elsewhere",
+    "Indigestion or difficulty in swallowing"
+  ]
+}
